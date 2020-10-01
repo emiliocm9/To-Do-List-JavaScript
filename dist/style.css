@@ -166,5 +166,14 @@ html {
 }
 
 .text-dropdown {
-  font-size: 1.3rem !important;
+  font-size: 1.5rem !important;
+}
+
+#priority-droplist {
+  height: 3rem !important;
+}
+
+/*--- To-Do List ---*/
+.card {
+  width: 16%;
 }

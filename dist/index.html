@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/b8f781cebc.js" crossorigin="anonymous"></script>
   <title>To-Do</title>
@@ -37,34 +38,45 @@
             <form>
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label label-text">Title:</label>
-                <input type="text" class="form-control input-text" id="recipient-name">
+                <input type="text" class="form-control input-text" id="title-text">
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label label-text">Message:</label>
-                <textarea class="form-control input-text" id="message-text"></textarea>
+                <textarea class="form-control input-text" id="description-text"></textarea>
               </div>
               <div class="form-group">
                 <label for="date-text" class="col-form-label label-text">Due Date</label>
                 <input type="date" class="form-control input-text" id="date-text" min="2018-01-01">
               </div>
-              <div class="dropdown show mx-auto mt-5">
-                <a class="btn btn-secondary dropdown-toggle label-text" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Priority
-                </a>
-              
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item text-dropdown" href="#">Action</a>
-                  <a class="dropdown-item text-dropdown" href="#">Another action</a>
-                  <a class="dropdown-item text-dropdown" href="#">Something else here</a>
-                </div>
+              <div class="form-group">
+                <label for="priority-droplist" class="label-text">Priority</label>
+                <select class="form-control" id="priority-droplist">
+                  <option class="text-dropdown">High</option>
+                  <option class="text-dropdown">Normal</option>
+                  <option class="text-dropdown">Low</option>
+                </select>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="task-button-text">Cancel</span></button>
-            <button type="button" class="btn btn-primary"><span class="task-button-text">Save</span></button>
+            <button type="button" class="btn btn-primary" id="add-button"><span class="task-button-text">Save</span></button>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="todo-container  justify-content-around w-100 d-flex flex-wrap">
+
+    <div class="card mt-2">
+      <div class="card-body">
+        <h5 class="card-title">Task Title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Task Date</h6>
+        <p class="card-text">Task Desc</p>
+        <label for="completion"></label>
+        <input type="checkbox" name="completed" id="completion">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
       </div>
     </div>
 
