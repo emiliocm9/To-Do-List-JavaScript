@@ -28,7 +28,7 @@ html {
   padding: 20px;
   margin: 0;
   font-weight: 300;
-  border-bottom: 3px solid #6fa0d8;
+  border-bottom: 1px solid black;
   background: transparent;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
@@ -140,4 +140,31 @@ html {
   .menumobile a {
     font-size: 1.2rem;
   }
+}
+
+/*--- NavBar Container ---*/
+.nav-container {
+  height: 8rem;
+}
+
+.task-add-button {
+  width: 10rem;
+  height: 50%;
+}
+
+.task-button-text {
+  font-size: 1.5rem;
+}
+
+/*--- Modal Form ---*/
+.label-text {
+  font-size: 1.5rem !important;
+}
+
+.input-text {
+  font-size: 1.5rem !important;
+}
+
+.text-dropdown {
+  font-size: 1.3rem !important;
 }
