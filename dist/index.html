@@ -12,19 +12,69 @@
 <body>
   <a class="menutoggle"></a>
   <div class="menumobile menuoff" >
-    <h3 class="">Menu</h3>
-    <a href="index.html" class="title_menu title_bond">Inicio</a>
-    <a href="servicios.html" class="title_menu title_bond">Servicios</a>
-    <a href="productos.html" class="title_menu title_bond">Productos</a>
-    <a href="contacto.html" class="title_menu title_bond">Contactos</a>
+    <h3 class="">My Projects</h3>
+    <div class="projects-container">
+      <a href="index.html" class="title_menu title_bond">Inicio</a>
+      <a href="servicios.html" class="title_menu title_bond">Servicios</a>
+      <a href="productos.html" class="title_menu title_bond">Productos</a>
+      <a href="contacto.html" class="title_menu title_bond">Contactos</a>
+    </div>
   </div>
   <div class="header w-100 border border-info d-flex">
+
+    <!-- Buttons of creation -->
     <div class="nav-container w-100 border border-danger align-items-center pr-5 d-flex flex-row-reverse">
+      <button type="button" class="btn btn-primary mr-5 task-add-button" data-toggle="modal" data-target="#modal-projects">
+        <span class="task-button-text">New Project</span>
+      </button>
       <button type="button" class="btn btn-primary mr-5 task-add-button" data-toggle="modal" data-target="#exampleModal">
-        <span class="task-button-text">Add Task</span>
+        <span class="task-button-text">New Task</span>
       </button>
     </div>
-    <!-- Modal -->
+
+    <!-- Modal Project -->
+    <div class="modal fade" id="modal-projects" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">ADD PROJECT</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label label-text">Title:</label>
+                <input type="text" class="form-control input-text" id="title-text">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label label-text">Description:</label>
+                <textarea class="form-control input-text" id="description-text"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="date-text" class="col-form-label label-text">Due Date</label>
+                <input type="date" class="form-control input-text" id="date-text" min="2018-01-01">
+              </div>
+              <div class="form-group">
+                <label for="priority-droplist" class="label-text">Priority</label>
+                <select class="form-control" id="priority-droplist">
+                  <option class="text-dropdown">High</option>
+                  <option class="text-dropdown">Normal</option>
+                  <option class="text-dropdown">Low</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="task-button-text">Cancel</span></button>
+            <button type="button" class="btn btn-primary" id="add-button"><span class="task-button-text">Save</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Task-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -65,7 +115,10 @@
         </div>
       </div>
     </div>
+
   </div>
+
+  <!-- To-Do Containers -->
   <div class="complete-title w-100 text-center">
     <h1>Complete</h1>
   </div>
