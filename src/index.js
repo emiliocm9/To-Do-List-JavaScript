@@ -5,4 +5,8 @@ $(document).ready(function(){
   });
 });
 
+import {myProjects, initFun} from './projectmodules';
+import {uploadProject} from './projectcreate';
 
+uploadProject();
+initFun(myProjects);

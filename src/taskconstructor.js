@@ -74,7 +74,6 @@ const addTaskToList = (title, description, date, priority, completion) => {
   const newTask = new Task(title, description, date, priority, completion);
   myList.push(newTask);
   listDisplay(newTask);
-  console.log(myList);
 }
 
 const uploadTask = () => {

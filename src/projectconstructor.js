@@ -1,5 +1,3 @@
-myProjects = [];
-
 class Project {
   constructor(name, description) {
     this.name = name;
@@ -8,8 +6,4 @@ class Project {
   }
 }
 
-const displayProjects = (projects) => {
-  for (let project in myProjects) {
-    project
-  }
-}
+export {Project};
