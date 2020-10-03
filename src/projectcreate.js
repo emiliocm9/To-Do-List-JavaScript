@@ -8,6 +8,7 @@ const uploadProject = () => {
     const description = document.querySelector('#project-description-text').value;
 
     addProjectToList(name, description);
+    saveProject.setAttribute('data-dismiss', 'modal');
   });
 }
 

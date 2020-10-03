@@ -88,6 +88,7 @@ const uploadTask = () => {
     const completion = false;
 
     addTaskToList(title, description, date, priority, completion);
+    saveProject.setAttribute('data-dismiss', 'modal');
   });
 }
 
