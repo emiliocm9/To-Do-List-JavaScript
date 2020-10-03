@@ -13,21 +13,6 @@ const displayProjects = (project) => {
   pruebaError(listIndex, project);
 }
 
-/* const deleteTask = (myCard, listIndex) => {
-  myCard.querySelector('#delete').addEventListener('click', () => {
-    const element = document.querySelector(`[data-index="${listIndex}"]`);
-    myContainer.removeChild(element);
-    delete myList(listIndex);
-  });
-} */
-
-const displayListsOfProject = (listIndex, project) => {
-  myContainer.innerHTML = '';
-  const argument = document.createElement('div');
-  argument.innerHTML = `<h1>${project.description}</h1>`;
-  myContainer.appendChild(argument);
-}
-
 const pruebaError = (listIndex, project) => {
   const element = document.querySelector(`[data-index="${listIndex}"]`);
   element.addEventListener('click', () => {
