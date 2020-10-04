@@ -1,16 +1,16 @@
 import {Project} from './projectconstructor';
 import {dropProject} from './projectselect';
+import {giveTasks} from './taskconstructor';
+import {innerCard, myContainer, undoneContainer} from './cardsdisplay';
 const myProjects = [];
-const myContainer = document.querySelector('.todo-container');
 const procontainer = document.querySelector('.projects-container');
 
 const displayTasksOf = (listIndex, project) => {
   const element = document.querySelector(`[data-index="${listIndex}"]`);
   element.addEventListener('click', () => {
-    myContainer.innerHTML ='';
-    const argument = document.createElement('div');
-    argument.innerHTML = `<h1>${project.name}</h1>`;
-    myContainer.appendChild(argument);
+    myContainer.innerHTML = '';
+    undoneContainer.innerHTML = '';
+    innerCard(project);
   });
 }
 
@@ -33,8 +33,9 @@ const addProjectToList = (name, description, task) => {
 }
 
 const initFun = (myProjects) => {
-  addProjectToList('Shopping', 'Biology homeworks', {title: 'Homework', description: 'Biology homework for miss Lily', date: '2018-05-31', priority: 'High', completion: true});
+  addProjectToList('Shopping', 'Biology homeworks');
   addProjectToList('Caramel', 'Buy caramel');
+  giveTasks();
 }
 
 export {myProjects, displayProjects, addProjectToList, initFun};
