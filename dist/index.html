@@ -43,10 +43,16 @@
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label label-text">Title:</label>
                 <input type="text" class="form-control input-text" id="project-name-text">
+                <div class="feedback d-none text-danger">
+                  Please provide a name for your project.
+                </div>
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label label-text">Description:</label>
-                <textarea class="form-control input-text" id="project-description-text"></textarea>
+                <textarea class="form-control input-text" id="project-description-text" required></textarea>
+                <div class="feedback d-none text-danger">
+                  Please provide a description for your project.
+                </div>
               </div>
             </form>
           </div>
@@ -72,15 +78,24 @@
             <form id="tasks-form">
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label label-text">Title:</label>
-                <input type="text" class="form-control input-text" id="title-text">
+                <input type="text" class="form-control input-text" id="title-text" required>
+                <div class="feedback-task d-none text-danger">
+                  Please provide a title.
+                </div>
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label label-text">Description:</label>
-                <textarea class="form-control input-text" id="description-text"></textarea>
+                <textarea class="form-control input-text" id="description-text" required></textarea>
+                <div class="feedback-task d-none text-danger">
+                  Please provide a description.
+                </div>
               </div>
               <div class="form-group">
                 <label for="date-text" class="col-form-label label-text">Due Date</label>
-                <input type="date" class="form-control input-text" id="date-text" min="2018-01-01">
+                <input type="date" class="form-control input-text" id="date-text" min="2018-01-01" required>
+                <div class="feedback-task d-none text-danger">
+                  Please provide a date.
+                </div>
               </div>
               <div class="form-group">
                 <label for="priority-droplist" class="label-text">Priority</label>

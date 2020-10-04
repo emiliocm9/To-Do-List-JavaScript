@@ -21,9 +21,18 @@ const uploadTask = () => {
     const y = document.getElementById("projects-droplist");
     const parent = y.options[y.selectedIndex].text;
 
-    addTaskToList(title, description, date, priority, completion, parent);
-    savebutton.setAttribute('data-dismiss', 'modal');
-    document.getElementById('tasks-form').reset();
+    if (title && description && date) {
+      addTaskToList(title, description, date, priority, completion, parent);
+      savebutton.setAttribute('data-dismiss', 'modal');
+      document.getElementById('tasks-form').reset();
+    } else {
+      for (let item in document.getElementsByClassName('feedback-task')) {
+        if (document.getElementsByClassName('feedback-task')[item]) {
+          var showFeedback = document.getElementsByClassName('feedback-task')[item].className.replace('d-none', 'd-block');
+          document.getElementsByClassName('feedback-task')[item].className = showFeedback;
+        }
+      }
+    }
   });
 }
 
