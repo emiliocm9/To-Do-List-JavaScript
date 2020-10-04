@@ -9,6 +9,7 @@ const uploadProject = () => {
 
     addProjectToList(name, description);
     saveProject.setAttribute('data-dismiss', 'modal');
+    document.getElementById('projects-form').reset();
   });
 }
 

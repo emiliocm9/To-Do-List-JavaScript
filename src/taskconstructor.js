@@ -22,8 +22,8 @@ const uploadTask = () => {
     const parent = y.options[y.selectedIndex].text;
 
     addTaskToList(title, description, date, priority, completion, parent);
-    saveProject.setAttribute('data-dismiss', 'modal');
-    document.getElementsByTagName('INPUT').value = '';
+    savebutton.setAttribute('data-dismiss', 'modal');
+    document.getElementById('tasks-form').reset();
   });
 }
 
