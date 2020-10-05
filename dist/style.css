@@ -100,9 +100,9 @@ html {
 }
 
 .buttonmove{
-  position:absolute;
-  margin-left:160px;
-  z-index:99999999999;
+  position: absolute;
+  margin-left: 160px;
+  z-index: 99999999999;
 }
 
 @media only screen and (max-width: 730px) {

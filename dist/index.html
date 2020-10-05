@@ -24,7 +24,7 @@
       <button type="button" class="btn btn-dark mr-5 task-add-button" data-toggle="modal" data-target="#modal-projects">
         <span class="task-button-text">New Project</span>
       </button>
-      <button type="button" class="btn btn-info mr-5 task-add-button" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" id="task-add-button-a" class="btn btn-info mr-5 task-add-button" data-toggle="modal" data-target="#exampleModal">
         <span class="task-button-text">New Task</span>
       </button>
       <div class="title-page">
@@ -117,6 +117,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="task-button-text">Cancel</span></button>
             <button type="button" class="btn btn-primary" id="add-button"><span class="task-button-text">Save</span></button>
+            <button type="button" class="btn btn-dark" id="edit-task-button"><span class="task-button-text">Save</span></button>
           </div>
         </div>
       </div>
@@ -127,8 +128,8 @@
   <!--- Jumbotron Section -->
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-2 mb-5 jumbotron-title">Create a new project or a new task.</h1>
-      <p class="lead font-title">Remember: Great Leaders Take Things One Step at a Time</p>
+      <h1 class="display-2 mb-5 jumbotron-title"></h1>
+      <p class="lead font-title jumbotron-desc"></p>
       <button class="btn btn-outline-danger">This is a Button</button>
     </div>
   </div>
@@ -149,7 +150,7 @@
     <ul class="info d-flex">
         <li class="list-none text-white">&copy; To-Do 2020</li>
         <li class="list-none text-white">One Step at a Time</li>
-        <li class="list-none text-white">A project for Microverse. Inc</li>
+        <li class="list-none text-white">A project for Microverse. Inc., by Emilio Contreras.</li>
     </ul>
     <ul class="CTA d-flex">
         <li class="list-none text-white"><a href="#" class="text-white">TODO</a></li>

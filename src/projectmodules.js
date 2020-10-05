@@ -1,5 +1,5 @@
 import {Project} from './projectconstructor';
-import {dropProject} from './projectselect';
+import {dropProject, hideEditTask} from './projectselect';
 import {giveTasks} from './taskconstructor';
 import {innerCard, myContainer, undoneContainer} from './cardsdisplay';
 const myProjects = [];
@@ -8,6 +8,8 @@ const procontainer = document.querySelector('.projects-container');
 const displayTasksOf = (listIndex, project) => {
   const element = document.querySelector(`[data-index="${listIndex}"]`);
   element.addEventListener('click', () => {
+    document.querySelector('.jumbotron-title').textContent = `${project.name}`
+    document.querySelector('.jumbotron-desc').textContent = `${project.description}`
     myContainer.innerHTML = '';
     undoneContainer.innerHTML = '';
     innerCard(project);
@@ -37,6 +39,7 @@ const initFun = (myProjects) => {
   addProjectToList('Kitchen Makeover', 'Renovating the kitchen.');
   addProjectToList('New Car Design', 'Designing a new transportation vehicle.');
   giveTasks();
+  hideEditTask();
 }
 
 export {myProjects, displayProjects, addProjectToList, initFun};

@@ -1,6 +1,21 @@
+import {savebutton, taskbutton, selectContainer} from './taskconstants';
+
 const dropProject = (project) => {
-  const selectContainer = document.querySelector('#projects-droplist');
   selectContainer.innerHTML += `<option class="text-dropdown">${project.name}</option>`
 }
 
-export {dropProject};
+const hideEditTask = () => {
+  const newTask = document.getElementById('task-add-button-a');
+  newTask.addEventListener('click', () => {
+    document.getElementById('tasks-form').reset();
+    if (!taskbutton.classList.contains('d-none')) {
+      taskbutton.classList.add('d-none');
+    }
+    if (savebutton.classList.contains('d-none')) {
+      savebutton.classList.remove('d-none');
+    }
+    selectContainer.classList.remove('d-none') ? selectContainer.classList.contains('d-none') : false;
+  });
+}
+
+export {dropProject, hideEditTask};

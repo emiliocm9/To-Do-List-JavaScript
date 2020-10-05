@@ -1,6 +1,7 @@
 import {Project} from './projectconstructor';
-import { myProjects } from './projectmodules';
 import {Task} from './taskmodule';
+import {savebutton} from './taskconstants';
+import { myProjects } from './projectmodules';
 
 const addTaskToList = (title, description, date, priority, completion, parent) => {
   const newTask = new Task(title, description, date, priority, completion);
@@ -8,9 +9,22 @@ const addTaskToList = (title, description, date, priority, completion, parent) =
   node[0].addTasks(newTask);
 }
 
-const uploadTask = () => {
-  const savebutton = document.querySelector('#add-button');
+const validateTask = (title, description, date, priority, completion, parent) => {
+  if (title && description && date) {
+    addTaskToList(title, description, date, priority, completion, parent);
+    savebutton.setAttribute('data-dismiss', 'modal');
+    document.getElementById('tasks-form').reset();
+  } else {
+    for (let item in document.getElementsByClassName('feedback-task')) {
+      if (document.getElementsByClassName('feedback-task')[item]) {
+        var showFeedback = document.getElementsByClassName('feedback-task')[item].className.replace('d-none', 'd-block');
+        document.getElementsByClassName('feedback-task')[item].className = showFeedback;
+      }
+    }
+  }
+}
 
+const uploadTask = () => {
   savebutton.addEventListener('click', () => {
     const title = document.querySelector('#title-text').value;
     const description = document.querySelector('#description-text').value;
@@ -20,25 +34,13 @@ const uploadTask = () => {
     const completion = false;
     const y = document.getElementById("projects-droplist");
     const parent = y.options[y.selectedIndex].text;
-
-    if (title && description && date) {
-      addTaskToList(title, description, date, priority, completion, parent);
-      savebutton.setAttribute('data-dismiss', 'modal');
-      document.getElementById('tasks-form').reset();
-    } else {
-      for (let item in document.getElementsByClassName('feedback-task')) {
-        if (document.getElementsByClassName('feedback-task')[item]) {
-          var showFeedback = document.getElementsByClassName('feedback-task')[item].className.replace('d-none', 'd-block');
-          document.getElementsByClassName('feedback-task')[item].className = showFeedback;
-        }
-      }
-    }
+    validateTask(title, description, date, priority, completion, parent);
   });
 }
 
 const giveTasks = () => {
   uploadTask();
-  addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'High', true, 'Closure of Plant');
+  addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'Low', true, 'Closure of Plant');
   addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', true, 'Closure of Plant');
 }
 

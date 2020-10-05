@@ -7,9 +7,11 @@ $(document).ready(function(){
 
 import {myProjects, initFun} from './projectmodules';
 import {uploadProject} from './projectcreate';
+import {hideEditTask} from './projectselect';
 
 uploadProject();
 initFun(myProjects);
+hideEditTask();
 
 window.onload = () => {
   document.querySelector(`[data-index="0"]`).click();
