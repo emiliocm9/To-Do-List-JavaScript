@@ -1,6 +1,4 @@
-import {savebutton, taskbutton, selectContainer} from './taskconstants';
-const myContainer = document.querySelector('.todo-container');
-const undoneContainer = document.querySelector('.todo-container-no');
+import {savebutton, taskbutton, selectContainer, myContainer, undoneContainer, selectContainerLabel} from './taskconstants';
 
 const toggleCheckBox = (checkList, card, task) => {
   if (task.completion) {
@@ -22,9 +20,9 @@ const deleteTask = (project, myCard, cardIndex) => {
   });
 }
 
-const validateChange = (project, title, description, date, priority, completion, parent, cardIndex) => {
+const validateChange = (project, title, description, date, priority, completion, cardIndex) => {
   if (title && description && date) {
-    project.tasks[cardIndex] = {title:title, description:description, date:date, priority:priority, completion:completion, project:parent};
+    project.tasks[cardIndex] = {title:title, description:description, date:date, priority:priority, completion:completion};
     taskbutton.setAttribute('data-dismiss', 'modal');
     taskbutton.classList.add('d-none');
     savebutton.classList.remove('d-none');
@@ -46,16 +44,15 @@ const changesListen = (project, cardIndex) => {
     const datee = document.querySelector('#date-text').value;
     const x = document.getElementById("priority-droplist");
     const prioritye = x.options[x.selectedIndex].text;
-    const completione = false;
-    const y = document.getElementById("projects-droplist");
-    const parente = y.options[y.selectedIndex].text;
-    validateChange(project, titlee, descriptione, datee, prioritye, completione, parente, cardIndex);
+    const completione = project.tasks[cardIndex].completion;
+    validateChange(project, titlee, descriptione, datee, prioritye, completione, cardIndex);
   });
 }
 
 const editTask = (project, myCard, cardIndex) => {
   myCard.querySelector('#edit').addEventListener('click', () => {
     selectContainer.classList.add('d-none');
+    selectContainerLabel.classList.add('d-none');
     taskbutton.classList.remove('d-none');
     savebutton.classList.add('d-none');
     $('#exampleModal').modal('show')
@@ -63,7 +60,6 @@ const editTask = (project, myCard, cardIndex) => {
     document.querySelector('#description-text').value = `${project.tasks[cardIndex].description}`;
     document.querySelector('#date-text').value = `${project.tasks[cardIndex].date}`;
     document.getElementById('priority-droplist').options[document.getElementById('priority-droplist').selectedIndex].text = `${project.tasks[cardIndex].priority}`
-    document.getElementById('projects-droplist').options[document.getElementById('projects-droplist').selectedIndex].text = `${project.name}`
     changesListen(project, cardIndex);
   });
 }

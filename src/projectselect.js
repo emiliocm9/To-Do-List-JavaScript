@@ -1,4 +1,4 @@
-import {savebutton, taskbutton, selectContainer} from './taskconstants';
+import {savebutton, taskbutton, selectContainer, selectContainerLabel} from './taskconstants';
 
 const dropProject = (project) => {
   selectContainer.innerHTML += `<option class="text-dropdown">${project.name}</option>`
@@ -15,6 +15,7 @@ const hideEditTask = () => {
       savebutton.classList.remove('d-none');
     }
     selectContainer.classList.remove('d-none') ? selectContainer.classList.contains('d-none') : false;
+    selectContainerLabel.classList.remove('d-none') ? selectContainerLabel.classList.contains('d-none') : false;
   });
 }
 
