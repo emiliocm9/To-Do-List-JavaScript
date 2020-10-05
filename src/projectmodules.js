@@ -20,7 +20,7 @@ const displayProjects = (project) => {
   const listIndex = myProjects.indexOf(project);
   const cont =  document.createElement('div');
   cont.setAttribute('data-index', `${listIndex}`);
-  cont.innerHTML += `<a href="#" class="title_menu title_bond">${project.name}</a>`;
+  cont.innerHTML += `<a href="#" data-text="${project.name}" class="title_menu title_bond">${project.name}</a>`;
 
   procontainer.appendChild(cont);
   displayTasksOf(listIndex, project);

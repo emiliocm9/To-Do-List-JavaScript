@@ -14,6 +14,7 @@ const validateTask = (title, description, date, priority, completion, parent) =>
     addTaskToList(title, description, date, priority, completion, parent);
     savebutton.setAttribute('data-dismiss', 'modal');
     document.getElementById('tasks-form').reset();
+    document.querySelector(`[data-text="${parent}"]`).click();
   } else {
     for (let item in document.getElementsByClassName('feedback-task')) {
       if (document.getElementsByClassName('feedback-task')[item]) {

@@ -26,6 +26,7 @@ const validateChange = (project, title, description, date, priority, completion,
     taskbutton.setAttribute('data-dismiss', 'modal');
     taskbutton.classList.add('d-none');
     savebutton.classList.remove('d-none');
+    document.querySelector(`[data-text="${project.name}"]`).click();
     document.getElementById('tasks-form').reset();
   } else {
     for (let item in document.getElementsByClassName('feedback-task')) {
