@@ -38,8 +38,8 @@ const uploadTask = () => {
 
 const giveTasks = () => {
   uploadTask();
-  addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'High', true, 'Shopping');
-  addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', true, 'Caramel');
+  addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'High', true, 'Closure of Plant');
+  addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', true, 'Closure of Plant');
 }
 
 export {giveTasks};

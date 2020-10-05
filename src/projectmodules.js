@@ -33,8 +33,9 @@ const addProjectToList = (name, description, task) => {
 }
 
 const initFun = (myProjects) => {
-  addProjectToList('Shopping', 'Biology homeworks');
-  addProjectToList('Caramel', 'Buy caramel');
+  addProjectToList('Closure of Plant', 'Nationwide rail company KiwiRail chose to close an industrial plant that manufactured rolling stock and replacement parts.');
+  addProjectToList('Kitchen Makeover', 'Renovating the kitchen.');
+  addProjectToList('New Car Design', 'Designing a new transportation vehicle.');
   giveTasks();
 }
 

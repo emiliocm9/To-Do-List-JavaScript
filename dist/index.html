@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/b8f781cebc.js" crossorigin="anonymous"></script>
@@ -16,16 +17,19 @@
     <div class="projects-container">
     </div>
   </div>
-  <div class="header w-100 border border-info d-flex">
+  <div class="header w-100 d-flex">
 
     <!-- Buttons of creation -->
-    <div class="nav-container w-100 border border-danger align-items-center pr-5 d-flex flex-row-reverse">
-      <button type="button" class="btn btn-primary mr-5 task-add-button" data-toggle="modal" data-target="#modal-projects">
+    <div class="nav-container w-100  bg-light align-items-center pr-5 d-flex flex-row-reverse">
+      <button type="button" class="btn btn-dark mr-5 task-add-button" data-toggle="modal" data-target="#modal-projects">
         <span class="task-button-text">New Project</span>
       </button>
-      <button type="button" class="btn btn-primary mr-5 task-add-button" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-info mr-5 task-add-button" data-toggle="modal" data-target="#exampleModal">
         <span class="task-button-text">New Task</span>
       </button>
+      <div class="title-page">
+        <h1 class="text-info name-a text-dark text-bold mx-auto">To-Do List</h1>
+      </div>
     </div>
 
     <!-- Modal Project -->
@@ -120,15 +124,38 @@
 
   </div>
 
+  <!--- Jumbotron Section -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-2 mb-5 jumbotron-title">Create a new project or a new task.</h1>
+      <p class="lead font-title">Remember: Great Leaders Take Things One Step at a Time</p>
+      <button class="btn btn-outline-danger">This is a Button</button>
+    </div>
+  </div>
+
   <!-- To-Do Containers -->
   <div class="complete-title w-100 text-center">
-    <h1>Complete</h1>
-  </div>
-  <div class="todo-container justify-content-around w-100 d-flex flex-wrap"></div>
-  <div class="complete-title w-100 text-center">
-    <h1>Uncomplete</h1>
+    <h1 class="title-tasks font-title font-italic">To-Do</h1>
   </div>
   <div class="todo-container-no justify-content-around w-100 d-flex flex-wrap"></div>
+  <div class="complete-title w-100 text-center">
+    <h1 class="title-tasks font-title font-italic">Done</h1>
+  </div>
+  <div class="todo-container justify-content-around w-100 d-flex flex-wrap"></div>
+
+  
+  <!---- Footer Section ---->
+  <footer class="copyright d-flex flex-column">
+    <ul class="info d-flex">
+        <li class="list-none text-white">&copy; To-Do 2020</li>
+        <li class="list-none text-white">One Step at a Time</li>
+        <li class="list-none text-white">A project for Microverse. Inc</li>
+    </ul>
+    <ul class="CTA d-flex">
+        <li class="list-none text-white"><a href="#" class="text-white">TODO</a></li>
+        <li class="list-none text-white"><a href="#" class="text-white">LIST</a></li>
+    </ul>
+  </footer>
 
 
 

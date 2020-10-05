@@ -10,3 +10,7 @@ import {uploadProject} from './projectcreate';
 
 uploadProject();
 initFun(myProjects);
+
+window.onload = () => {
+  document.querySelector(`[data-index="0"]`).click();
+};
