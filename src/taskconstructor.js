@@ -41,8 +41,8 @@ const uploadTask = () => {
 
 const giveTasks = () => {
   uploadTask();
-  addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'Low', true, 'Closure of Plant');
-  addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', true, 'Closure of Plant');
+  addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'Low', false, 'Closure of Plant');
+  addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', false, 'Closure of Plant');
 }
 
 export {giveTasks};
