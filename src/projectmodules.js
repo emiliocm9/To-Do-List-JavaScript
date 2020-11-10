@@ -32,9 +32,14 @@ const addProjectToList = (name, description, task) => {
   myProjects.push(newProject);
   displayProjects(newProject);
   dropProject(newProject);
+  appendLocalStorage(name, newProject)
 }
 
-const initFun = (myProjects) => {
+const appendLocalStorage = (storage, item) => {
+  localStorage.setItem(storage, JSON.stringify(item));
+}
+
+const initFun = () => {
   addProjectToList('Closure of Plant', 'Nationwide rail company KiwiRail chose to close an industrial plant that manufactured rolling stock and replacement parts.');
   addProjectToList('Kitchen Makeover', 'Renovating the kitchen.');
   addProjectToList('New Car Design', 'Designing a new transportation vehicle.');
