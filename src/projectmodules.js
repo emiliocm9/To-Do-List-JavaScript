@@ -51,7 +51,9 @@ const initAppendLocalStorage = () => {
 }
 
 const initFun = () => {
-  initAppendLocalStorage();
+  if (localStorage.length == 0) {
+    initAppendLocalStorage();
+  }
   for (let key in localStorage) {
       if (key != 'length' && key != 'undefined') {
       const content = JSON.parse(localStorage[key]);

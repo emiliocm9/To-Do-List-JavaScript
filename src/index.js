@@ -10,7 +10,7 @@ import {uploadProject} from './projectcreate';
 import {hideEditTask} from './projectselect';
 
 uploadProject();
-initFun(myProjects);
+initFun();
 hideEditTask();
 
 window.onload = () => {
