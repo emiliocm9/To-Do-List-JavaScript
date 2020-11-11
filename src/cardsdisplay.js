@@ -30,6 +30,7 @@ const deleteTask = (project, myCard, cardIndex) => {
 const validateChange = (project, title, description, date, priority, completion, cardIndex) => {
   if (title && description && date) {
     project.tasks[cardIndex] = {title:title, description:description, date:date, priority:priority, completion:completion};
+    localStorage.setItem(project.name, JSON.stringify(project));
     taskbutton.setAttribute('data-dismiss', 'modal');
     taskbutton.classList.add('d-none');
     savebutton.classList.remove('d-none');
@@ -112,7 +113,7 @@ const innerCard = (nameOfProject) => {
 
       const checkList = myCard.querySelector('.read-check');
 
-      editTask(taskX[i], myCard, cardIndex);
+      editTask(project, myCard, cardIndex);
       deleteTask(project, myCard, cardIndex);
       toggleCheckBox(checkList, myCard, taskX[i]);
       eventCheckList(checkList, myCard, taskX[i]);
