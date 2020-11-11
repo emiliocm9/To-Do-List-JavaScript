@@ -12,7 +12,7 @@ const displayTasksOf = (listIndex, project) => {
     document.querySelector('.jumbotron-desc').textContent = `${project.description}`
     myContainer.innerHTML = '';
     undoneContainer.innerHTML = '';
-    innerCard(project);
+    innerCard(project.name);
   });
 }
 
@@ -25,7 +25,7 @@ const displayProjects = (project) => {
   cont.innerHTML += `<a href="#" data-text="${dataOfProject.name}" class="title_menu title_bond">${dataOfProject.name}</a>`;
 
   procontainer.appendChild(cont);
-  displayTasksOf(listIndex, project);
+  displayTasksOf(listIndex, dataOfProject);
 }
 
 const addProjectToList = (name, description, task) => {

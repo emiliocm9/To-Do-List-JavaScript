@@ -8,7 +8,6 @@ const addTaskToList = (title, description, date, priority, completion, parent) =
   const node = JSON.parse(localStorage[parent]);
   node['tasks'].push(newTask);
   localStorage[parent] = JSON.stringify(node);
-  console.log(typeof localStorage[parent]);
 }
 
 const validateTask = (title, description, date, priority, completion, parent) => {

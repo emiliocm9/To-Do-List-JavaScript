@@ -77,19 +77,21 @@ const eventCheckList = (checkList, card, task) => {
   });
 }
 
-const innerCard = (project) => {
-  for (let i = 1; i < project.tasks.length; i += 1) {
-    if (project.tasks[i]) {
+const innerCard = (nameOfProject) => {
+  const projectX = JSON.parse(localStorage[nameOfProject]).tasks;
+  console.log(projectX);
+  for (let i = 1; i < projectX.length; i += 1) {
+    if (projectX[i]) {
       const cardIndex = i;
       const myCard = document.createElement('div');
       myCard.className = 'card mt-2';
       myCard.setAttribute('data-index', `${cardIndex}`);
       myCard.innerHTML = `
         <div class="card-body">
-          <h5 class="card-title">${project.tasks[i].title}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${project.tasks[i].date}</h6>
-          <p class="card-text">${project.tasks[i].description}</p>
-          <p class="card-text text-uppercase">${project.tasks[i].priority} importance</p>
+          <h5 class="card-title">${projectX[i].title}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${projectX[i].date}</h6>
+          <p class="card-text">${projectX[i].description}</p>
+          <p class="card-text text-uppercase">${projectX[i].priority} importance</p>
           <div class="d-flex w-100 justify-content-between">
             <div>
               <input type="checkbox" class="read-check ml-2 mb-3"/>
@@ -103,10 +105,10 @@ const innerCard = (project) => {
 
       const checkList = myCard.querySelector('.read-check');
 
-      editTask(project, myCard, cardIndex);
-      deleteTask(project, myCard, cardIndex);
-      toggleCheckBox(checkList, myCard, project.tasks[i]);
-      eventCheckList(checkList, myCard, project.tasks[i]);
+      editTask(projectX[i], myCard, cardIndex);
+      deleteTask(projectX[i], myCard, cardIndex);
+      toggleCheckBox(checkList, myCard, projectX[i]);
+      eventCheckList(checkList, myCard, projectX[i]);
     }
   }
 }
