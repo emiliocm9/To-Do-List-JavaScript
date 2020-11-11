@@ -1,6 +1,6 @@
 import {Project} from './projectconstructor';
 import {dropProject, hideEditTask} from './projectselect';
-import {giveTasks} from './taskconstructor';
+import {giveTasks, uploadTask, addTaskToList} from './taskconstructor';
 import {innerCard, myContainer, undoneContainer} from './cardsdisplay';
 const myProjects = [];
 const procontainer = document.querySelector('.projects-container');
@@ -25,42 +25,44 @@ const displayProjects = (project) => {
   cont.innerHTML += `<a href="#" data-text="${dataOfProject.name}" class="title_menu title_bond">${dataOfProject.name}</a>`;
 
   procontainer.appendChild(cont);
-  displayTasksOf(listIndex, dataOfProject);
+  displayTasksOf(listIndex, project);
 }
 
-const addProjectToList = (name, description, task) => {
+const addProjectToList = (name, description) => {
   const newProject = new Project(name, description);
-  newProject.addTasks(task);
   myProjects.push(newProject);
-  appendLocalStorage(name, newProject)
+  localStorage.setItem(name, JSON.stringify(newProject));
   displayProjects(newProject);
   dropProject(newProject);
-}
-
-const appendLocalStorage = (storage, item) => {
-  localStorage.setItem(storage, JSON.stringify(item));
 }
 
 const initAppendLocalStorage = () => {
   const one = new Project('Closure of Plant', 'Nationwide rail company KiwiRail chose to close an industrial plant that manufactured rolling stock and replacement parts.')
   const two = new Project('Kitchen Makeover', 'Renovating the kitchen.');
   const three = new Project('New Car Design', 'Designing a new transportation vehicle.');
-  localStorage.setItem('Closure of Plant', JSON.stringify(one));
-  localStorage.setItem('Kitchen Makeover', JSON.stringify(two));
-  localStorage.setItem('New Car Design', JSON.stringify(three));
+  const arr = [one, two, three]
+  arr.forEach (element => {
+    addProjectToList(element.name, element.description);
+  })
 }
 
-const  initFun = async () => {
+const initFun = () => {
   if (localStorage.length == 0) {
     initAppendLocalStorage();
-  }
-  for (let key in localStorage) {
-    if (/name/.test(localStorage[key])) {
-      const content = JSON.parse(localStorage[key]);
-      addProjectToList(content.name, content.description);
+    addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'Low', false, 'Closure of Plant');
+    addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', false, 'Closure of Plant');
+  } else {
+    for (let key in localStorage) {
+      if (/name/.test(localStorage[key])) {
+        const content = JSON.parse(localStorage[key]);
+        addProjectToList(content.name, content.description);
+        for (let key in content['tasks']) {
+          addTaskToList(content['tasks'][key].title, content['tasks'][key].description, content['tasks'][key].date, content['tasks'][key].priority, content['tasks'][key].completion, content.name);
+        }
+      }
     }
   }
-  giveTasks();
+  uploadTask();
   hideEditTask();
 }
 

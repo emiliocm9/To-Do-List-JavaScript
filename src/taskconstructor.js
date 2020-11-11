@@ -5,9 +5,9 @@ import { myProjects } from './projectmodules';
 
 const addTaskToList = (title, description, date, priority, completion, parent) => {
   const newTask = new Task(title, description, date, priority, completion);
-  const node = JSON.parse(localStorage[parent]);
+  const node = JSON.parse(localStorage.getItem(parent));
   node['tasks'].push(newTask);
-  localStorage[parent] = JSON.stringify(node);
+  localStorage.setItem(parent, JSON.stringify(node));
 }
 
 const validateTask = (title, description, date, priority, completion, parent) => {
@@ -40,10 +40,4 @@ const uploadTask = () => {
   });
 }
 
-const giveTasks = () => {
-  uploadTask();
-  addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'Low', false, 'Closure of Plant');
-  addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', false, 'Closure of Plant');
-}
-
-export {giveTasks};
+export {uploadTask, addTaskToList};

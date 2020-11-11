@@ -79,8 +79,7 @@ const eventCheckList = (checkList, card, task) => {
 
 const innerCard = (nameOfProject) => {
   const projectX = JSON.parse(localStorage[nameOfProject]).tasks;
-  console.log(projectX);
-  for (let i = 1; i < projectX.length; i += 1) {
+  for (let i = 0; i < projectX.length; i += 1) {
     if (projectX[i]) {
       const cardIndex = i;
       const myCard = document.createElement('div');
