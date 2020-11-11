@@ -13,6 +13,6 @@ uploadProject();
 initFun();
 hideEditTask();
 
-window.onload = () => {
+/* window.onload = () => {
   document.querySelector(`[data-index="0"]`).click();
-};
+}; */

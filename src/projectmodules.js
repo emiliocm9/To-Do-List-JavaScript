@@ -50,12 +50,12 @@ const initAppendLocalStorage = () => {
   localStorage.setItem('New Car Design', JSON.stringify(three));
 }
 
-const initFun = () => {
+const  initFun = async () => {
   if (localStorage.length == 0) {
     initAppendLocalStorage();
   }
   for (let key in localStorage) {
-      if (key != 'length' && key != 'undefined') {
+    if (/name/.test(localStorage[key])) {
       const content = JSON.parse(localStorage[key]);
       addProjectToList(content.name, content.description);
     }

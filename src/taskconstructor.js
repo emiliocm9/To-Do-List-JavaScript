@@ -5,8 +5,10 @@ import { myProjects } from './projectmodules';
 
 const addTaskToList = (title, description, date, priority, completion, parent) => {
   const newTask = new Task(title, description, date, priority, completion);
-  const node = myProjects.filter(item => item.name == parent);
-  node[0].addTasks(newTask);
+  const node = JSON.parse(localStorage[parent]);
+  node['tasks'].push(newTask);
+  localStorage[parent] = JSON.stringify(node);
+  console.log(typeof localStorage[parent]);
 }
 
 const validateTask = (title, description, date, priority, completion, parent) => {
