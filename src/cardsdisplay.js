@@ -73,13 +73,17 @@ const editTask = (project, myCard, cardIndex) => {
   });
 }
 
-const eventCheckList = (checkList, card, task) => {
+const eventCheckList = (checkList, card, project, index, task) => {
   checkList.addEventListener('change', () => {
     if (task.completion) {
-      task.completion = false;
+      task.completion = false
+      project.tasks[index].completion = false;
+      localStorage.setItem(project.name, JSON.stringify(project))
       toggleCheckBox(checkList, card, task);
     } else {
-      task.completion = true;
+      task.completion = true
+      project.tasks[index].completion = true;
+      localStorage.setItem(project.name, JSON.stringify(project))
       toggleCheckBox(checkList, card, task);
     }
   });
@@ -116,7 +120,7 @@ const innerCard = (nameOfProject) => {
       editTask(project, myCard, cardIndex);
       deleteTask(project, myCard, cardIndex);
       toggleCheckBox(checkList, myCard, taskX[i]);
-      eventCheckList(checkList, myCard, taskX[i]);
+      eventCheckList(checkList, myCard, project, cardIndex, taskX[i]);
     }
   }
 }
