@@ -2,6 +2,7 @@ import Project from './projectconstructor';
 import { dropProject, hideEditTask } from './projectselect';
 import { uploadTask, addTaskToList } from './taskconstructor';
 import { innerCard, myContainer, undoneContainer } from './cardsdisplay';
+
 const myProjects = [];
 const procontainer = document.querySelector('.projects-container');
 
@@ -20,7 +21,7 @@ const displayProjects = (project) => {
   const listIndex = myProjects.indexOf(project);
   const listade = localStorage.getItem(project.name);
   const dataOfProject = JSON.parse(listade);
-  const cont =  document.createElement('div');
+  const cont = document.createElement('div');
   cont.setAttribute('data-index', `${listIndex}`);
   cont.innerHTML += `<a href="#" data-text="${dataOfProject.name}" class="title_menu title_bond">${dataOfProject.name}</a>`;
 
@@ -37,17 +38,17 @@ const addProjectToList = (name, description) => {
 };
 
 const initAppendLocalStorage = () => {
-  const one = new Project('Closure of Plant', 'Nationwide rail company KiwiRail chose to close an industrial plant that manufactured rolling stock and replacement parts.')
+  const one = new Project('Closure of Plant', 'Nationwide rail company KiwiRail chose to close an industrial plant that manufactured rolling stock and replacement parts.');
   const two = new Project('Kitchen Makeover', 'Renovating the kitchen.');
   const three = new Project('New Car Design', 'Designing a new transportation vehicle.');
-  const arr = [one, two, three]
-  arr.forEach (element => {
+  const arr = [one, two, three];
+  arr.forEach(element => {
     addProjectToList(element.name, element.description);
-  })
+  });
 };
 
 const initFun = () => {
-  if (localStorage.length == 0) {
+  if (localStorage.length === 0) {
     initAppendLocalStorage();
     addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'Low', false, 'Kitchen Makeover');
     addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', false, 'Kitchen Makeover');
@@ -56,8 +57,8 @@ const initFun = () => {
       if (/name/.test(localStorage[key])) {
         const content = JSON.parse(localStorage[key]);
         addProjectToList(content.name, content.description);
-        for (let key in content['tasks']) {
-          addTaskToList(content['tasks'][key].title, content['tasks'][key].description, content['tasks'][key].date, content['tasks'][key].priority, content['tasks'][key].completion, content.name);
+        for (let key in content.tasks) {
+          addTaskToList(content.tasks[key].title, content.tasks[key].description, content.tasks[key].date, content.tasks[key].priority, content.tasks[key].completion, content.name);
         }
       }
     }
@@ -67,4 +68,6 @@ const initFun = () => {
   hideEditTask();
 };
 
-export { myProjects, displayProjects, addProjectToList, initFun };
+export {
+  myProjects, displayProjects, addProjectToList, initFun,
+  };
