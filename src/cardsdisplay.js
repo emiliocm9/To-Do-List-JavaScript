@@ -110,8 +110,8 @@ const innerCard = (nameOfProject) => {
       myCard.innerHTML = `
         <div class="card-body">
           <h5 class="card-title">${taskX[i].title}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${ taskX[i].date}</h6>
-          <p class="card-text">${taskX[i].description }</p>
+          <h6 class="card-subtitle mb-2 text-muted">${taskX[i].date}</h6>
+          <p class="card-text">${taskX[i].description}</p>
           <p class="card-text text-uppercase">${taskX[i].priority} importance</p>
           <div class="d-flex w-100 justify-content-between">
             <div>
