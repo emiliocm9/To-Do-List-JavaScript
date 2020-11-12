@@ -1,5 +1,5 @@
 import {
-  savebutton, taskbutton, selectContainer, myContainer, undoneContainer, selectContainerLabel 
+  savebutton, taskbutton, selectContainer, myContainer, undoneContainer, selectContainerLabel,
 } from './taskconstants';
 
 const toggleCheckBox = (checkList, card, task) => {
@@ -15,15 +15,15 @@ const toggleCheckBox = (checkList, card, task) => {
 const deleteTask = (project, myCard, cardIndex) => {
   myCard.querySelector('#delete').addEventListener('click', () => {
     if (window.confirm('Are you sure you want to delete this task?')) {
-      if (undoneContainer.querySelector(`[data-index="${ cardIndex }"]`)) {
-        const element = undoneContainer.querySelector(`[data-index="${ cardIndex }"]`);
+      if (undoneContainer.querySelector(`[data-index="${cardIndex}"]`)) {
+        const element = undoneContainer.querySelector(`[data-index="${cardIndex}"]`);
         undoneContainer.removeChild(element);
       } else {
-        const element = myContainer.querySelector(`[data-index="${ cardIndex }"]`);
+        const element = myContainer.querySelector(`[data-index="${cardIndex}"]`);
         myContainer.removeChild(element);
       }
       delete project.tasks[cardIndex];
-      project.tasks = project.tasks.filter(function (e) {return e != null;});
+      project.tasks = project.tasks.filter((e) => { return e != null; });
       localStorage.setItem(project.name, JSON.stringify(project));
     }
   });
@@ -31,20 +31,26 @@ const deleteTask = (project, myCard, cardIndex) => {
 
 const validateChange = (project, title, description, date, priority, completion, cardIndex) => {
   if (title && description && date) {
-    project.tasks[cardIndex] = { title: title, description: description, date: date, priority: priority, completion: completion };
+    project.tasks[cardIndex] = {
+      title: title,
+      description: description,
+      date: date,
+      priority: priority,
+      completion: completion 
+    };
     localStorage.setItem(project.name, JSON.stringify(project));
     taskbutton.setAttribute('data-dismiss', 'modal');
     taskbutton.classList.add('d-none');
     savebutton.classList.remove('d-none');
-    document.querySelector(`[data-text="${ project.name }"]`).click();
+    document.querySelector(`[data-text="${project.name}"]`).click();
     document.getElementById('tasks-form').reset();
   } else {
-    for (let item in document.getElementsByClassName('feedback-task')) {
+    document.getElementsByClassName('feedback-task').forEach (item => {
       if (document.getElementsByClassName('feedback-task')[item]) {
         var showFeedback = document.getElementsByClassName('feedback-task')[item].className.replace('d-none', 'd-block');
         document.getElementsByClassName('feedback-task')[item].className = showFeedback;
       }
-    }
+    });
   }
 };
 
