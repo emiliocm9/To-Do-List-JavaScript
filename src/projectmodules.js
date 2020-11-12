@@ -61,7 +61,8 @@ const initFun = () => {
           for (let num = 0; num < content.tasks.length; num += 1) {
             const task = content.tasks[num];
             const par = content.name;
-            addTaskToList(task.title, task.description, task.date, task.priority, task.completion, par);
+            const { title } = task;
+            addTaskToList(title, task.description, task.date, task.priority, task.completion, par);
           }
         }
       }
