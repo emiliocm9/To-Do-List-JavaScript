@@ -1,4 +1,4 @@
-import { Project } from './projectconstructor';
+import Project from './projectconstructor';
 import { dropProject, hideEditTask } from './projectselect';
 import { uploadTask, addTaskToList } from './taskconstructor';
 import { innerCard, myContainer, undoneContainer } from './cardsdisplay';

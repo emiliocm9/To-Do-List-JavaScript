@@ -1,4 +1,4 @@
-import { Task } from './taskmodule';
+import Task from './taskmodule';
 import { savebutton } from './taskconstants';
 
 const addTaskToList = (title, description, date, priority, completion, parent) => {

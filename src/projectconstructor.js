@@ -2,7 +2,7 @@ class Project {
   constructor(name, description) {
     this.name = name;
     this.description = description;
-    this.tasks = []
+    this.tasks = [];
   }
 
   addTasks(task) {
@@ -10,4 +10,4 @@ class Project {
   }
 }
 
-export {Project};
+export default Project;

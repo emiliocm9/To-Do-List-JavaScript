@@ -1,4 +1,4 @@
-import {addProjectToList} from './projectmodules';
+import { addProjectToList } from './projectmodules';
 
 const uploadProject = () => {
   const saveProject = document.querySelector('#add-project-button');
