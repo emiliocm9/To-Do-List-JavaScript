@@ -1,3 +1,7 @@
+import { initFun } from './projectmodules';
+import { uploadProject } from './projectcreate';
+import { hideEditTask } from './projectselect';
+
 $(document).ready(function(){
   $('.menutoggle').click (function() {
     $('.menumobile').toggleClass("menuoff");
@@ -5,14 +9,10 @@ $(document).ready(function(){
   });
 });
 
-import {myProjects, initFun} from './projectmodules';
-import {uploadProject} from './projectcreate';
-import {hideEditTask} from './projectselect';
-
 uploadProject();
 initFun();
 hideEditTask();
 
 window.onload = () => {
-  document.querySelector(`[data-index="0"]`).click();
+  document.querySelector(`[data-index="1"]`).click();
 };

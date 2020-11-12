@@ -1,7 +1,5 @@
-import {Project} from './projectconstructor';
-import {Task} from './taskmodule';
-import {savebutton} from './taskconstants';
-import { myProjects } from './projectmodules';
+import { Task } from './taskmodule';
+import { savebutton } from './taskconstants';
 
 const addTaskToList = (title, description, date, priority, completion, parent) => {
   const newTask = new Task(title, description, date, priority, completion);

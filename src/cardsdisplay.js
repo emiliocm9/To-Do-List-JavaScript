@@ -1,4 +1,4 @@
-import {savebutton, taskbutton, selectContainer, myContainer, undoneContainer, selectContainerLabel} from './taskconstants';
+import { savebutton, taskbutton, selectContainer, myContainer, undoneContainer, selectContainerLabel } from './taskconstants';
 
 const toggleCheckBox = (checkList, card, task) => {
   if (task.completion) {

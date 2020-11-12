@@ -1,15 +1,15 @@
-import {Project} from './projectconstructor';
-import {dropProject, hideEditTask} from './projectselect';
-import {giveTasks, uploadTask, addTaskToList} from './taskconstructor';
-import {innerCard, myContainer, undoneContainer} from './cardsdisplay';
+import { Project } from './projectconstructor';
+import { dropProject, hideEditTask } from './projectselect';
+import { uploadTask, addTaskToList } from './taskconstructor';
+import { innerCard, myContainer, undoneContainer } from './cardsdisplay';
 const myProjects = [];
 const procontainer = document.querySelector('.projects-container');
 
 const displayTasksOf = (listIndex, project) => {
   const element = document.querySelector(`[data-index="${listIndex}"]`);
   element.addEventListener('click', () => {
-    document.querySelector('.jumbotron-title').textContent = `${project.name}`
-    document.querySelector('.jumbotron-desc').textContent = `${project.description}`
+    document.querySelector('.jumbotron-title').textContent = `${project.name}`;
+    document.querySelector('.jumbotron-desc').textContent = `${project.description}`;
     myContainer.innerHTML = '';
     undoneContainer.innerHTML = '';
     innerCard(project.name);
@@ -49,8 +49,8 @@ const initAppendLocalStorage = () => {
 const initFun = () => {
   if (localStorage.length == 0) {
     initAppendLocalStorage();
-    addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'Low', false, 'Closure of Plant');
-    addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', false, 'Closure of Plant');
+    addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'Low', false, 'Kitchen Makeover');
+    addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', false, 'Kitchen Makeover');
   } else {
     for (let key in localStorage) {
       if (/name/.test(localStorage[key])) {
@@ -62,8 +62,9 @@ const initFun = () => {
       }
     }
   }
+
   uploadTask();
   hideEditTask();
 }
 
-export {myProjects, displayProjects, addProjectToList, initFun};
+export { myProjects, displayProjects, addProjectToList, initFun };
