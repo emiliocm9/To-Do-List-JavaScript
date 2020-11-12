@@ -1,8 +1,10 @@
-import {savebutton, taskbutton, selectContainer, selectContainerLabel} from './taskconstants';
+import {
+  savebutton, taskbutton, selectContainer, selectContainerLabel,
+} from './taskconstants';
 
 const dropProject = (project) => {
-  selectContainer.innerHTML += `<option class="text-dropdown">${project.name}</option>`
-}
+  selectContainer.innerHTML += `<option class="text-dropdown">${project.name}</option>`;
+};
 
 const hideEditTask = () => {
   const newTask = document.getElementById('task-add-button-a');
@@ -14,9 +16,13 @@ const hideEditTask = () => {
     if (savebutton.classList.contains('d-none')) {
       savebutton.classList.remove('d-none');
     }
-    selectContainer.classList.remove('d-none') ? selectContainer.classList.contains('d-none') : false;
-    selectContainerLabel.classList.remove('d-none') ? selectContainerLabel.classList.contains('d-none') : false;
+    if (selectContainer.classList.contains('d-none')) {
+      selectContainer.classList.remove('d-none');
+    }
+    if (selectContainerLabel.classList.contains('d-none')) {
+      selectContainerLabel.classList.remove('d-none')
+    }
   });
-}
+};
 
-export {dropProject, hideEditTask};
+export { dropProject, hideEditTask };
