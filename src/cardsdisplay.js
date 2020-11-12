@@ -1,3 +1,4 @@
+/* eslint-env jquery */
 import {
   savebutton, taskbutton, selectContainer, myContainer, undoneContainer, selectContainerLabel,
 } from './taskconstants';
@@ -23,7 +24,7 @@ const deleteTask = (project, myCard, cardIndex) => {
         myContainer.removeChild(element);
       }
       delete project.tasks[cardIndex];
-      project.tasks = project.tasks.filter((e) => { return e != null; });
+      project.tasks = project.tasks.filter((e) => (e != null));
       localStorage.setItem(project.name, JSON.stringify(project));
     }
   });
@@ -32,11 +33,11 @@ const deleteTask = (project, myCard, cardIndex) => {
 const validateChange = (project, title, description, date, priority, completion, cardIndex) => {
   if (title && description && date) {
     project.tasks[cardIndex] = {
-      title: title,
-      description: description,
-      date: date,
-      priority: priority,
-      completion: completion 
+      title,
+      description,
+      date,
+      priority,
+      completion,
     };
     localStorage.setItem(project.name, JSON.stringify(project));
     taskbutton.setAttribute('data-dismiss', 'modal');
@@ -45,9 +46,9 @@ const validateChange = (project, title, description, date, priority, completion,
     document.querySelector(`[data-text="${project.name}"]`).click();
     document.getElementById('tasks-form').reset();
   } else {
-    document.getElementsByClassName('feedback-task').forEach (item => {
+    document.getElementsByClassName('feedback-task').forEach(item => {
       if (document.getElementsByClassName('feedback-task')[item]) {
-        var showFeedback = document.getElementsByClassName('feedback-task')[item].className.replace('d-none', 'd-block');
+        const showFeedback = document.getElementsByClassName('feedback-task')[item].className.replace('d-none', 'd-block');
         document.getElementsByClassName('feedback-task')[item].className = showFeedback;
       }
     });
@@ -59,7 +60,7 @@ const changesListen = (project, cardIndex) => {
     const titlee = document.querySelector('#title-text').value;
     const descriptione = document.querySelector('#description-text').value;
     const datee = document.querySelector('#date-text').value;
-    const x = document.getElementById("priority-droplist");
+    const x = document.getElementById('priority-droplist');
     const prioritye = x.options[x.selectedIndex].text;
     const completione = project.tasks[cardIndex].completion;
     validateChange(project, titlee, descriptione, datee, prioritye, completione, cardIndex);
@@ -72,11 +73,11 @@ const editTask = (project, myCard, cardIndex) => {
     selectContainerLabel.classList.add('d-none');
     taskbutton.classList.remove('d-none');
     savebutton.classList.add('d-none');
-    $('#exampleModal').modal('show')
-    document.querySelector('#title-text').value = `${ project.tasks[cardIndex].title }`;
-    document.querySelector('#description-text').value = `${ project.tasks[cardIndex].description }`;
-    document.querySelector('#date-text').value = `${ project.tasks[cardIndex].date }`;
-    document.getElementById('priority-droplist').options[document.getElementById('priority-droplist').selectedIndex].text = `${ project.tasks[cardIndex].priority }`
+    $('#exampleModal').modal('show');
+    document.querySelector('#title-text').value = `${project.tasks[cardIndex].title}`;
+    document.querySelector('#description-text').value = `${project.tasks[cardIndex].description}`;
+    document.querySelector('#date-text').value = `${project.tasks[cardIndex].date}`;
+    document.getElementById('priority-droplist').options[document.getElementById('priority-droplist').selectedIndex].text = `${project.tasks[cardIndex].priority}`;
     changesListen(project, cardIndex);
   });
 };
@@ -84,14 +85,14 @@ const editTask = (project, myCard, cardIndex) => {
 const eventCheckList = (checkList, card, project, index, task) => {
   checkList.addEventListener('change', () => {
     if (task.completion) {
-      task.completion = false
+      task.completion = false;
       project.tasks[index].completion = false;
-      localStorage.setItem(project.name, JSON.stringify(project))
+      localStorage.setItem(project.name, JSON.stringify(project));
       toggleCheckBox(checkList, card, task);
     } else {
-      task.completion = true
+      task.completion = true;
       project.tasks[index].completion = true;
-      localStorage.setItem(project.name, JSON.stringify(project))
+      localStorage.setItem(project.name, JSON.stringify(project));
       toggleCheckBox(checkList, card, task);
     }
   });
@@ -99,19 +100,19 @@ const eventCheckList = (checkList, card, project, index, task) => {
 
 const innerCard = (nameOfProject) => {
   const taskX = JSON.parse(localStorage[nameOfProject]).tasks;
-  const project = JSON.parse(localStorage[nameOfProject])
+  const project = JSON.parse(localStorage[nameOfProject]);
   for (let i = 0; i < taskX.length; i += 1) {
     if (taskX[i]) {
       const cardIndex = i;
       const myCard = document.createElement('div');
       myCard.className = 'card mt-2';
-      myCard.setAttribute('data-index', `${ cardIndex}`);
+      myCard.setAttribute('data-index', `${cardIndex}`);
       myCard.innerHTML = `
         <div class="card-body">
-          <h5 class="card-title">${ taskX[i].title }</h5>
-          <h6 class="card-subtitle mb-2 text-muted">${ taskX[i].date }</h6>
-          <p class="card-text">${ taskX[i].description }</p>
-          <p class="card-text text-uppercase">${ taskX[i].priority } importance</p>
+          <h5 class="card-title">${taskX[i].title}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">${ taskX[i].date}</h6>
+          <p class="card-text">${taskX[i].description }</p>
+          <p class="card-text text-uppercase">${taskX[i].priority} importance</p>
           <div class="d-flex w-100 justify-content-between">
             <div>
               <input type="checkbox" class="read-check ml-2 mb-3"/>
@@ -133,4 +134,4 @@ const innerCard = (nameOfProject) => {
   }
 };
 
-export {innerCard, myContainer, undoneContainer};
+export { innerCard, myContainer, undoneContainer };
