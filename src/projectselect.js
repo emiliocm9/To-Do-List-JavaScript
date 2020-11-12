@@ -20,7 +20,7 @@ const hideEditTask = () => {
       selectContainer.classList.remove('d-none');
     }
     if (selectContainerLabel.classList.contains('d-none')) {
-      selectContainerLabel.classList.remove('d-none')
+      selectContainerLabel.classList.remove('d-none');
     }
   });
 };

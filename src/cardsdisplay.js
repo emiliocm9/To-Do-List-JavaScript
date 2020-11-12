@@ -46,12 +46,12 @@ const validateChange = (project, title, description, date, priority, completion,
     document.querySelector(`[data-text="${project.name}"]`).click();
     document.getElementById('tasks-form').reset();
   } else {
-    document.getElementsByClassName('feedback-task').forEach(item => {
-      if (document.getElementsByClassName('feedback-task')[item]) {
-        const showFeedback = document.getElementsByClassName('feedback-task')[item].className.replace('d-none', 'd-block');
-        document.getElementsByClassName('feedback-task')[item].className = showFeedback;
+    for (let i = 0; i < document.getElementsByClassName('feedback-task').length; i += 1) {
+      if (document.getElementsByClassName('feedback-task')[i]) {
+        const showFeedback = document.getElementsByClassName('feedback-task')[i].className.replace('d-none', 'd-block');
+        document.getElementsByClassName('feedback-task')[i].className = showFeedback;
       }
-    });
+    };
   }
 };
 

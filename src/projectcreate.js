@@ -11,12 +11,12 @@ const uploadProject = () => {
       saveProject.setAttribute('data-dismiss', 'modal');
       document.getElementById('projects-form').reset();
     } else {
-      document.getElementsByClassName('feedback').forEach(item => {
-        if (document.getElementsByClassName('feedback')[item]) {
-          const showFeedback = document.getElementsByClassName('feedback')[item].className.replace('d-none', 'd-block');
-          document.getElementsByClassName('feedback')[item].className = showFeedback;
+      for (let i = 0; i < document.getElementsByClassName('feedback').length; i += 1) {
+        if (document.getElementsByClassName('feedback')[i]) {
+          const showFeedback = document.getElementsByClassName('feedback')[i].className.replace('d-none', 'd-block');
+          document.getElementsByClassName('feedback')[i].className = showFeedback;
         }
-      });
+      };
     }
   });
 };

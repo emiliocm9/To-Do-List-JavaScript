@@ -4,7 +4,7 @@ import { savebutton } from './taskconstants';
 const addTaskToList = (title, description, date, priority, completion, parent) => {
   const newTask = new Task(title, description, date, priority, completion);
   const node = JSON.parse(localStorage.getItem(parent));
-  node['tasks'].push(newTask);
+  node.tasks.push(newTask);
   localStorage.setItem(parent, JSON.stringify(node));
 };
 
@@ -13,14 +13,14 @@ const validateTask = (title, description, date, priority, completion, parent) =>
     addTaskToList(title, description, date, priority, completion, parent);
     savebutton.setAttribute('data-dismiss', 'modal');
     document.getElementById('tasks-form').reset();
-    document.querySelector(`[data-text="${parent}"]`).click();
+    document.querySelector('[data-text="${parent}"]').click();
   } else {
-    for (let item in document.getElementsByClassName('feedback-task')) {
+    for (let item = 0; item < document.getElementsByClassName('feedback-task').length; item += 1) {
       if (document.getElementsByClassName('feedback-task')[item]) {
         var showFeedback = document.getElementsByClassName('feedback-task')[item].className.replace('d-none', 'd-block');
         document.getElementsByClassName('feedback-task')[item].className = showFeedback;
       }
-    }
+    };
   }
 };
 
