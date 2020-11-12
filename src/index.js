@@ -18,5 +18,5 @@ displayTrigger();
 hideEditTask();
 
 window.onload = () => {
-  document.querySelector('[data-index="1"]').click();
+  document.querySelector('#allTasksButton').click();
 };
