@@ -1,6 +1,7 @@
 import { initFun } from './projectmodules';
 import uploadProject from './projectcreate';
 import { hideEditTask } from './projectselect';
+import { displayTrigger } from './allTasks';
 
 document.querySelector('.menutoggle').addEventListener('click', () => {
   'menuoff,menuhide'.split(',').forEach((str) => {
@@ -13,6 +14,7 @@ document.querySelector('.menutoggle').addEventListener('click', () => {
 
 uploadProject();
 initFun();
+displayTrigger();
 hideEditTask();
 
 window.onload = () => {

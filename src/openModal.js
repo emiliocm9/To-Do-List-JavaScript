@@ -13,9 +13,6 @@ const openDeleteModal = () => {
 const customConfirm = (text) => {
   openDeleteModal();
   document.getElementById('modal-body-delete').textContent = text;
-  document.getElementById('DeleteButton').addEventListener('click', () => {
-    return true
-  });
 };
 
 export { openModal, customConfirm };

@@ -15,7 +15,7 @@ const toggleCheckBox = (checkList, card, task) => {
 
 const deleteTask = (project, myCard, cardIndex) => {
   myCard.querySelector('#delete').addEventListener('click', () => {
-    customConfirm('Are you sure you want to delete this task?')
+    customConfirm('Are you sure you want to delete this task?');
     document.getElementById('DeleteButton').addEventListener('click', () => {
       if (undoneContainer.querySelector(`[data-index="${cardIndex}"]`)) {
         const element = undoneContainer.querySelector(`[data-index="${cardIndex}"]`);
