@@ -29,10 +29,10 @@ const uploadTask = () => {
     const title = document.querySelector('#title-text').value;
     const description = document.querySelector('#description-text').value;
     const date = document.querySelector('#date-text').value;
-    const x = document.getElementById("priority-droplist");
+    const x = document.getElementById('priority-droplist');
     const priority = x.options[x.selectedIndex].text;
     const completion = false;
-    const y = document.getElementById("projects-droplist");
+    const y = document.getElementById('projects-droplist');
     const parent = y.options[y.selectedIndex].text;
     validateTask(title, description, date, priority, completion, parent);
   });
