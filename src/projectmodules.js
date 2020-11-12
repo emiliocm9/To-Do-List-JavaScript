@@ -14,7 +14,7 @@ const displayTasksOf = (listIndex, project) => {
     undoneContainer.innerHTML = '';
     innerCard(project.name);
   });
-}
+};
 
 const displayProjects = (project) => {
   const listIndex = myProjects.indexOf(project);
@@ -26,7 +26,7 @@ const displayProjects = (project) => {
 
   procontainer.appendChild(cont);
   displayTasksOf(listIndex, project);
-}
+};
 
 const addProjectToList = (name, description) => {
   const newProject = new Project(name, description);
@@ -34,7 +34,7 @@ const addProjectToList = (name, description) => {
   localStorage.setItem(name, JSON.stringify(newProject));
   displayProjects(newProject);
   dropProject(newProject);
-}
+};
 
 const initAppendLocalStorage = () => {
   const one = new Project('Closure of Plant', 'Nationwide rail company KiwiRail chose to close an industrial plant that manufactured rolling stock and replacement parts.')
@@ -44,7 +44,7 @@ const initAppendLocalStorage = () => {
   arr.forEach (element => {
     addProjectToList(element.name, element.description);
   })
-}
+};
 
 const initFun = () => {
   if (localStorage.length == 0) {
@@ -65,6 +65,6 @@ const initFun = () => {
 
   uploadTask();
   hideEditTask();
-}
+};
 
 export { myProjects, displayProjects, addProjectToList, initFun };

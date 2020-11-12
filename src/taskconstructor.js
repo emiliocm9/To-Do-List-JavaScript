@@ -6,7 +6,7 @@ const addTaskToList = (title, description, date, priority, completion, parent) =
   const node = JSON.parse(localStorage.getItem(parent));
   node['tasks'].push(newTask);
   localStorage.setItem(parent, JSON.stringify(node));
-}
+};
 
 const validateTask = (title, description, date, priority, completion, parent) => {
   if (title && description && date) {
@@ -22,7 +22,7 @@ const validateTask = (title, description, date, priority, completion, parent) =>
       }
     }
   }
-}
+};
 
 const uploadTask = () => {
   savebutton.addEventListener('click', () => {
@@ -36,6 +36,6 @@ const uploadTask = () => {
     const parent = y.options[y.selectedIndex].text;
     validateTask(title, description, date, priority, completion, parent);
   });
-}
+};
 
-export {uploadTask, addTaskToList};
+export { uploadTask, addTaskToList };

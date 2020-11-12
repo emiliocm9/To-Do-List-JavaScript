@@ -20,7 +20,7 @@ This webpage has designed to help users keep track of their to-do tasks and have
 
 - Github Website.
 
-You can click on this [link](https://emiliocm9.github.io/Weather-API/dist/)
+You can click on this [link](https://emiliocm9.github.io/To-Do-List-JavaScript/dist/)
 
 
 ## Getting Started
@@ -44,7 +44,7 @@ To get a local copy up and running follow these simple example steps.
 
 To deploy this repo, I used Github Pages.
 
-> You can access to the deployed app following this [link](https://emiliocm9.github.io/Weather-API/dist/)
+> You can access to the deployed app following this [link](https://emiliocm9.github.io/To-Do-List-JavaScript/dist/)
 
 ## Authors
 
