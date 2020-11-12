@@ -1,7 +1,21 @@
 const openModal = () => {
-  document.getElementById("backdrop").style.display = "block"
-  document.getElementById("exampleModal").style.display = "block"
-  document.getElementById("exampleModal").className += "show"
-}
+  document.getElementById('backdrop').style.display = 'block';
+  document.getElementById('exampleModal').style.display = 'block';
+  document.getElementById('exampleModal').className += 'show';
+};
 
-export default openModal;
+const openDeleteModal = () => {
+  document.getElementById('backdrop').style.display = 'block';
+  document.getElementById('exampleModalDelete').style.display = 'block';
+  document.getElementById('exampleModalDelete').className += 'show';
+};
+
+const customConfirm = (text) => {
+  openDeleteModal();
+  document.getElementById('modal-body-delete').textContent = text;
+  document.getElementById('DeleteButton').addEventListener('click', () => {
+    return true
+  });
+};
+
+export { openModal, customConfirm };

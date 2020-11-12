@@ -1,7 +1,7 @@
 import {
   savebutton, taskbutton, selectContainer, myContainer, undoneContainer, selectContainerLabel,
 } from './taskconstants';
-import openModal from './openModal';
+import { openModal, customConfirm } from './openModal';
 
 const toggleCheckBox = (checkList, card, task) => {
   if (task.completion) {
@@ -15,7 +15,8 @@ const toggleCheckBox = (checkList, card, task) => {
 
 const deleteTask = (project, myCard, cardIndex) => {
   myCard.querySelector('#delete').addEventListener('click', () => {
-    if (window.confirm('Are you sure you want to delete this task?')) {
+    customConfirm('Are you sure you want to delete this task?')
+    document.getElementById('DeleteButton').addEventListener('click', () => {
       if (undoneContainer.querySelector(`[data-index="${cardIndex}"]`)) {
         const element = undoneContainer.querySelector(`[data-index="${cardIndex}"]`);
         undoneContainer.removeChild(element);
@@ -26,7 +27,7 @@ const deleteTask = (project, myCard, cardIndex) => {
       delete project.tasks[cardIndex];
       project.tasks = project.tasks.filter((e) => (e != null));
       localStorage.setItem(project.name, JSON.stringify(project));
-    }
+    });
   });
 };
 
