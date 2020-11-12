@@ -53,12 +53,17 @@ const initFun = () => {
     addTaskToList('Shop-Homework', 'Biology homework for miss Lily', '2018-05-31', 'Low', false, 'Kitchen Makeover');
     addTaskToList('Car-Homework', 'Caramel homework for miss Lily', '2018-05-31', 'High', false, 'Kitchen Makeover');
   } else {
-    for (let key in localStorage) {
-      if (/name/.test(localStorage[key])) {
-        const content = JSON.parse(localStorage[key]);
+    for (let i = 0; i < localStorage.length; i += 1) {
+      if (/name/.test(localStorage[localStorage.key(i)])) {
+        const content = JSON.parse(localStorage[localStorage.key(i)]);
         addProjectToList(content.name, content.description);
-        for (let key in content.tasks) {
-          addTaskToList(content.tasks[key].title, content.tasks[key].description, content.tasks[key].date, content.tasks[key].priority, content.tasks[key].completion, content.name);
+        if (content.tasks.length > 0) {
+          for (let num = 0; num < content.tasks.length; num += 1) {
+            const task = content.tasks[num];
+            const par = content.name;
+            const title = task.title;
+            addTaskToList(title, task.description, task.date, task.priority, task.completion, par);
+          }
         }
       }
     }
@@ -70,4 +75,4 @@ const initFun = () => {
 
 export {
   myProjects, displayProjects, addProjectToList, initFun,
-  };
+};
