@@ -67,13 +67,20 @@ const changesListen = (project, cardIndex) => {
   });
 };
 
+const openModal = () => {
+  //document.getElementById("backdrop").style.display = "block"
+  document.getElementById("exampleModal").style.display = "block"
+  document.getElementById("exampleModal").className += "show"
+}
+
 const editTask = (project, myCard, cardIndex) => {
   myCard.querySelector('#edit').addEventListener('click', () => {
     selectContainer.classList.add('d-none');
     selectContainerLabel.classList.add('d-none');
     taskbutton.classList.remove('d-none');
     savebutton.classList.add('d-none');
-    $('#exampleModal').modal('show');
+    //$('#exampleModal').modal('show');
+    openModal();
     document.querySelector('#title-text').value = `${project.tasks[cardIndex].title}`;
     document.querySelector('#description-text').value = `${project.tasks[cardIndex].description}`;
     document.querySelector('#date-text').value = `${project.tasks[cardIndex].date}`;

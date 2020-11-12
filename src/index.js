@@ -3,11 +3,14 @@ import { initFun } from './projectmodules';
 import uploadProject from './projectcreate';
 import { hideEditTask } from './projectselect';
 
-$(() => {
-  $('.menutoggle').on('click', () => {
-    $('.menumobile').toggleClass('menuoff');
-    $('.menutoggle').toggleClass('buttonmove');
-  });
+
+document.querySelector('.menutoggle').addEventListener('click', () => {
+  'menuoff,menuhide'.split(',').forEach((str) => {
+    document.querySelector('.menumobile').classList.toggle(str);
+  })
+  'buttonmove,buttonhide'.split(',').forEach((str) => {
+    document.querySelector('.menutoggle').classList.toggle(str);
+  })
 });
 
 uploadProject();
