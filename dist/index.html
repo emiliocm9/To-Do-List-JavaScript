@@ -38,7 +38,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">ADD PROJECT</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModalPro()">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -61,12 +61,13 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="task-button-text">Cancel</span></button>
-            <button type="button" class="btn btn-primary" id="add-project-button"><span class="task-button-text">Save</span></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModalPro()"><span class="task-button-text">Cancel</span></button>
+            <button type="button" class="btn btn-primary" id="add-project-button" onclick="closeModalPro()"><span class="task-button-text">Save</span></button>
           </div>
         </div>
       </div>
     </div>
+    <div class="modal-backdrop fade show" id="backdrop-pro" style="display: none;"></div>
 
     <!-- Modal Task-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -122,7 +123,7 @@
         </div>
       </div>
     </div>
-    <div class="modal-backdrop fade show" id="backdrop""></div>
+    <div class="modal-backdrop fade show" id="backdrop" style="display: none;"></div>
 
   </div>
 
@@ -167,12 +168,28 @@
       document.getElementById("backdrop").style.display = "block"
       document.getElementById("exampleModal").style.display = "block"
       document.getElementById("exampleModal").className += "show"
+      document.getElementById("modal-projects").style.display = "block"
+      document.getElementById("modal-projects").className += "show"
+    }
+
+    const openModalPro = () => {
+      document.getElementById("backdrop-pro").style.display = "block"
+      document.getElementById("modal-projects").style.display = "block"
+      document.getElementById("modal-projects").className += "show"
     }
 
     const closeModal = () => {
       document.getElementById("backdrop").style.display = "none"
       document.getElementById("exampleModal").style.display = "none"
       document.getElementById("exampleModal").className += document.getElementById("exampleModal").className.replace("show", "")
+      document.getElementById("modal-projects").style.display = "none"
+      document.getElementById("modal-projects").className += document.getElementById("exampleModal").className.replace("show", "")
+    }
+
+    const closeModalPro = () => {
+      document.getElementById("backdrop-pro").style.display = "none";
+      document.getElementById("modal-projects").style.display = "none"
+      document.getElementById("modal-projects").className += document.getElementById("exampleModal").className.replace("show", "")
     }
   </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
