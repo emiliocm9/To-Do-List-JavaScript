@@ -1,0 +1,30 @@
+{
+  "name": "to-do-list-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "webpack": "npx webpack --mode development --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emiliocm9/To-Do-List-JavaScript.git"
+  },
+  "author": "Emilio Contreras",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emiliocm9/To-Do-List-JavaScript/issues"
+  },
+  "homepage": "https://github.com/emiliocm9/To-Do-List-JavaScript#readme",
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.2"
+  }
+}

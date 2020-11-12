@@ -1,0 +1,289 @@
+body {
+  margin:0;
+  padding:0;
+  font-family: 'Oranienbaum', serif;
+  min-width: 318px;
+  font-size: 1.4rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+/*--- Fonts ----*/
+
+.font-title {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*----- Menu Toggle -----*/
+.menumobile {
+  background-color: #6c757d;
+  position: fixed;
+}
+
+.menumobile h3 {
+  font-size: 1.9em;
+  text-transform: uppercase;
+  padding: 20px 2rem 3.8rem 2rem;
+  margin: 0;
+  border-bottom: 1px solid white;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  background: transparent;
+  color: white;
+}
+
+.menumobile a {
+  display: block;
+  background-color: transparent;
+  font-size: 1.4em;
+  letter-spacing: 0.2rem;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.menumobile a:hover {
+  background: white;
+  color: black;
+  text-decoration: none;
+}
+
+.menumobile {
+  width: 240px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.menumobile a {
+  text-decoration:none;
+  padding: 1em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.menumobile {
+  left: 0px;
+}
+
+.menumobile,.menuoff,.buttonmove,.menutoggle  {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.menuoff{
+  margin-left:-240px;
+}
+
+.menutoggle {
+  left:1em;
+  top: 1em;
+  position: absolute;
+  cursor: pointer;
+}
+
+.menutoggle:before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  top: 1rem;
+  width: 3.5rem;
+  height: 2.7rem;
+  border-top: 1.6rem double black;
+  border-bottom: 0.5rem solid black;
+}
+
+.buttonmove{
+  position: absolute;
+  margin-left: 160px;
+  z-index: 99999999999;
+}
+
+@media only screen and (max-width: 730px) {
+  .menumobile {
+    width: 17rem;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .menumobile {
+    width: 13rem;
+  }
+
+  .menutoggle {
+    left: 0;
+  }
+
+  .menutoggle:before {
+    top: 0.3rem;
+  }
+
+  .menumobile h3 {
+    font-size: 1.7rem;
+    padding-right: 0;
+    padding-left: 0.7rem;
+  }
+
+  .logo_text-cont h1 {
+    font-size: 1.8rem;
+    margin-right: 0.5rem;
+  }
+
+  .menuoff{
+    margin-left: -14rem;
+  }
+
+  .buttonmove {
+    margin-left: 7rem;
+  }
+
+  .menumobile a {
+    font-size: 1.2rem;
+  }
+}
+
+/*--- NavBar Container ---*/
+.nav-container {
+  height: 8rem;
+}
+
+.task-add-button {
+  width: 10rem;
+  height: 50%;
+}
+
+.task-button-text {
+  font-size: 1.5rem;
+}
+
+.title-page {
+  width: 40%;
+}
+
+.name-a {
+  font-size: 3rem;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  text-shadow: -1px 1px rgba(74, 74, 74, 0.145) , -2px 2px rgba(79, 79, 79, 0.14) , -3px 3px rgba(85, 85, 85, 0.135) , -4px 4px rgba(90, 90, 90, 0.13);
+}
+
+/*-- Jumbotron Style ---*/
+.jumbotron{
+  margin:15px 30px 0px 30px;
+  border-radius:10px;
+  background:  linear-gradient( rgba(0, 0, 250, 0.25), rgba(125, 250, 250, 0.45));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color:white !important;
+  height:20rem;
+}
+
+.btn-outline-danger{
+  color:white;
+  border-color:white;
+  border-radius:0px;
+  font-weight:100;
+  margin-top:rem;
+}
+
+.lead{
+  font-weight:100;
+  margin-top:-10px;
+}
+
+/*--- Modal Form ---*/
+.label-text {
+  font-size: 1.5rem !important;
+}
+
+.input-text {
+  font-size: 1.5rem !important;
+}
+
+.text-dropdown {
+  font-size: 1.5rem !important;
+}
+
+#priority-droplist {
+  height: 3rem !important;
+}
+
+/*--- To-Do List ---*/
+.card {
+  width: 16%;
+}
+
+.title-tasks {
+  display: table;
+  white-space: nowrap;
+  border-spacing: 25px 0;
+}
+
+.title-tasks:before, .title-tasks:after {
+  content: "";
+  display: table-cell;
+  width: 50%;
+  background: -webkit-linear-gradient(#aaa, #aaa) repeat-x left center;
+  background: -moz-linear-gradient(#aaa, #aaa) repeat-x left center;
+  background: -ms-linear-gradient(#aaa, #aaa) repeat-x left center;
+  background: linear-gradient(#aaa, #aaa) repeat-x left center;
+  background-size: 1px 1px;
+}
+
+.todo-container {
+  margin-bottom: 15rem;
+}
+
+/*------------- Footer Section ------------*/
+.copyright {
+  padding: 15px 40px 30px;
+  background-color: #262526;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.copyright .svg-up {
+  top: 0;
+  left: 50%;
+  margin-left: -96px;
+  margin-top: -50px;
+}
+
+.copyright .arrow-up {
+  width: 40px;
+  height: 30px;
+  top: -45px;
+  color: #fff;
+  line-height: 1.9
+}
+
+.copyright ul {
+  justify-content: center;
+}
+
+.copyright li {
+  font-size: 14px;
+}
+
+.copyright li:not(:last-of-type):after {
+  content: '•';
+  margin: 10px;
+}
+
+.copyright .CTA {
+  margin-top: 25px;
+}
+
+.list-none {
+  list-style: none;
+}
