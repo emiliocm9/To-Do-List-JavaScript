@@ -11,14 +11,14 @@ const uploadProject = () => {
       saveProject.setAttribute('data-dismiss', 'modal');
       document.getElementById('projects-form').reset();
     } else {
-      for (let item in document.getElementsByClassName('feedback')) {
+      document.getElementsByClassName('feedback').forEach(item => {
         if (document.getElementsByClassName('feedback')[item]) {
-          var showFeedback = document.getElementsByClassName('feedback')[item].className.replace('d-none', 'd-block');
+          const showFeedback = document.getElementsByClassName('feedback')[item].className.replace('d-none', 'd-block');
           document.getElementsByClassName('feedback')[item].className = showFeedback;
         }
-      }
+      });
     }
   });
-}
+};
 
-export {uploadProject};
+export default uploadProject;

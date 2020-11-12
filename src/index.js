@@ -1,6 +1,6 @@
 /* eslint-env jquery */
 import { initFun } from './projectmodules';
-import { uploadProject } from './projectcreate';
+import uploadProject from './projectcreate';
 import { hideEditTask } from './projectselect';
 
 $(() => {
