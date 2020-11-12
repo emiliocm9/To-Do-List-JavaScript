@@ -51,7 +51,7 @@ const validateChange = (project, title, description, date, priority, completion,
         const showFeedback = document.getElementsByClassName('feedback-task')[i].className.replace('d-none', 'd-block');
         document.getElementsByClassName('feedback-task')[i].className = showFeedback;
       }
-    };
+    }
   }
 };
 

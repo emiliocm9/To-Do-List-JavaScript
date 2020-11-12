@@ -16,7 +16,7 @@ const uploadProject = () => {
           const showFeedback = document.getElementsByClassName('feedback')[i].className.replace('d-none', 'd-block');
           document.getElementsByClassName('feedback')[i].className = showFeedback;
         }
-      };
+      }
     }
   });
 };
