@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --verbose",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "webpack": "npx webpack --mode development --watch"
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/emiliocm9/To-Do-List-JavaScript#readme",
   "devDependencies": {
     "eslint": "^7.13.0",
+    "jest": "^26.6.3",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
   },
