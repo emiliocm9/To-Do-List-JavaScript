@@ -1,4 +1,4 @@
-/*global page */
+/* global page */
 describe('Key UI elements', () => {
   beforeAll(async () => {
     await page.goto('http://localhost:9000/');
