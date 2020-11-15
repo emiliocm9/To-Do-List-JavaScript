@@ -1,3 +1,4 @@
+/* eslint-disable no-eval */ 
 describe('Key UI elements', () => {
   beforeAll(async () => {
     await page.goto('http://localhost:9000/');

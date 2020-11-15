@@ -6,7 +6,7 @@ test('Create new Task with correct information', () => {
   expect(newTask).toBeTruthy();
   expect(newTask).toBeDefined();
   expect(newTask).toEqual({
-    title: 'Biology Homework', description: 'Complete the test using your book', date: '10-29-2024', priority: 'Low', completion: false
+    title: 'Biology Homework', description: 'Complete the test using your book', date: '10-29-2024', priority: 'Low', completion: false,
   });
 });
 
@@ -15,6 +15,6 @@ test('Wrong task creation without title', () => {
 
   expect(newTask.title).toBeUndefined();
   expect(newTask).toEqual({
-    title: undefined, description: 'Complete the test using your book', date: '10-29-2024', priority: 'Low', completion: false 
+    title: undefined, description: 'Complete the test using your book', date: '10-29-2024', priority: 'Low', completion: false,
   });
 });
