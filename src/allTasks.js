@@ -1,7 +1,6 @@
 import { innerCard } from './cardsdisplay';
 import { myContainer, undoneContainer } from './taskconstants';
 
-const trigger = document.querySelector('#allTasksButton');
 const displayAllTasks = () => {
   for (let i = 0; i < localStorage.length; i += 1) {
     if (/name/.test(localStorage[localStorage.key(i)])) {
@@ -12,6 +11,7 @@ const displayAllTasks = () => {
 };
 
 const displayTrigger = () => {
+  const trigger = document.querySelector('#allTasksButton');
   trigger.addEventListener('click', () => {
     const now = new Date();
     const date = now.toLocaleDateString();

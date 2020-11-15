@@ -15,6 +15,8 @@ This webpage has designed to help users keep track of their to-do tasks and have
 - Webpack
 - LocalStorage
 - Bootstrap
+- Jest
+- Puppeteer
 
 ## Live Demo
 
@@ -39,6 +41,17 @@ To get a local copy up and running follow these simple example steps.
 -[x] 4.- Type git clone and paste the url you copied on step one.
 
 ![Clone](https://github.com/emiliocm9/Expense-Tracker/blob/development/app/assets/images/git_clone_better.png)
+
+## Testing
+
+- Install project dependencies. Run the following command-line in your terminal
+> npm install
+
+- Compile the development build
+> npm run dev
+
+- Run testing with following command in your terminal.
+> npm run test
 
 ### Deployment
 
