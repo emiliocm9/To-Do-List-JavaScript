@@ -1,5 +1,3 @@
-import { expect, test } from '@jest/globals';
-import { title } from 'process';
 import Task from '../taskmodule';
 
 test('Create new Task with correct information', () => {
@@ -7,12 +5,16 @@ test('Create new Task with correct information', () => {
 
   expect(newTask).toBeTruthy();
   expect(newTask).toBeDefined();
-  expect(newTask).toEqual({title: 'Biology Homework', description: 'Complete the test using your book', date: '10-29-2024', priority: 'Low', completion: false})
+  expect(newTask).toEqual({
+    title: 'Biology Homework', description: 'Complete the test using your book', date: '10-29-2024', priority: 'Low', completion: false
+  });
 });
 
 test('Wrong task creation without title', () => {
   const newTask = new Task(undefined, 'Complete the test using your book', '10-29-2024', 'Low', false);
 
   expect(newTask.title).toBeUndefined();
-  expect(newTask).toEqual({title: undefined, description: 'Complete the test using your book', date: '10-29-2024', priority: 'Low', completion: false})
+  expect(newTask).toEqual({
+    title: undefined, description: 'Complete the test using your book', date: '10-29-2024', priority: 'Low', completion: false 
+  });
 });

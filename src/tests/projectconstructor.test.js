@@ -1,4 +1,3 @@
-import { expect, test } from '@jest/globals';
 import Project from '../projectconstructor';
 
 test('Create new project', () => {

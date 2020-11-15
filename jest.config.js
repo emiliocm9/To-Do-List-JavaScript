@@ -2,5 +2,5 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|less|scss)$': 'identity-obj-proxy',
   },
-  "preset": "jest-puppeteer"
+  preset: 'jest-puppeteer',
 };

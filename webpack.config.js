@@ -22,7 +22,7 @@ module.exports = {
           'file-loader',
         ],
       },
-    ]
+    ],
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist/'),
@@ -30,6 +30,6 @@ module.exports = {
     open: true,
     publicPath: 'http://localhost:9000/',
     hotOnly: true,
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 };

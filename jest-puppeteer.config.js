@@ -1,5 +1,5 @@
 module.exports = {
   server: {
-    command: 'npm run start'
-  }
-}
+    command: 'npm run start',
+  },
+};
